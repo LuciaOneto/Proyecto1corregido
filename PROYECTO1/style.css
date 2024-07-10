@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* COLORS */
+  --rtc-color-000: #eeeeee;
+  --rtc-color-100: #f5f5f5;
+  --rtc-color-200: #d2d2d2;
+  --rtc-color-300: #000000;
+
+  /* BACKGROUND */
+  --rtc-body-background: var(--rtc-color-000);
+  --rtc-card-background: var(--rtc-color-200);
+  --rtc-section-background: var(--rtc-color-100);
+  --rtc-button-background: var(--rtc-color-100);
+
+  /* TEXT COLORS */
+  --rtc-text-color-primary: var(--rtc-color-300);
+  --rtc-text-color-secondary: var(--rtc-color-100);
+  /* FONTS */
+
+  /* SPACINGS */
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-xxl: 60px;
+
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+  --rtc-padding-xxl: 100px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+  --rtc-gap-xxl: 60px;
+
+  /* BORDER RADIUS */
+  --rtc-border-radius: 10px;
+  --rtc-border-radius-circle: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p,
+h1,
+h4 {
+  font-family: 'Playfair+Display', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--rtc-text-color-primary);
+}
+header {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1;
+  padding: 30px;
+  justify-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.logo {
+  width: 30px;
+  padding-left: 0px;
+  grid-column: 1/2;
+}
+.usuario {
+  width: 30px;
+  grid-column: 10/11;
+  padding-right: 0px;
+  cursor: pointer;
+}
+.cesta {
+  width: 30px;
+  grid-column: 11;
+  padding-right: 0px;
+  cursor: pointer;
+}
+
+header > nav > ul {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+header > nav {
+  grid-column: 2/3;
+}
+header {
+  background-color: var(--rtc-body-background);
+}
+
+.menu {
+  width: 30px;
+  display: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.menu > img {
+  width: 100%;
+}
+section > h1 {
+  color: var(--rtc-color-100);
+  display: flex;
+  position: absolute;
+  padding-left: var(--rtc-padding-m);
+  padding-top: var(--rtc-padding-xl);
+  font-family: 'playfair-display';
+  font-weight: 50;
+  font-size: 400%;
+}
+section > h4 {
+  color: var(--rtc-color-100);
+  display: flex;
+  position: absolute;
+  padding-top: var(--rtc-padding-xxl);
+  padding-left: var(--rtc-padding-l);
+  margin-top: var(--rtc-margin-s);
+}
+section > img {
+  width: 100%;
+}
+.grid-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  justify-items: center;
+  align-content: center;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  margin: var(--rtc-margin-s);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--rtc-gap-xs);
+  margin: var(--rtc-margin-s);
+  padding-left: 5%;
+  max-height: 200px;
+}
+.card {
+  display: grid;
+  width: 70%;
+  height: 75%;
+  transition: transform 0.5s;
+  background-color: var(--rtc-card-background);
+  border-radius: var(--rtc-border-radius);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: var(--rtc-margin-s);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+  min-width: 120px;
+  object-fit: cover;
+  grid-column: 2/4;
+  grid-row: 1 / 4;
+  justify-self: end;
+  gap: var(--rtc-gap-m);
+  max-height: 120px;
+}
+
+.card > h4 {
+  font-size: 18px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  padding-top: var(--rtc-padding-s);
+}
+
+.description {
+  text-align: center;
+  padding-top: var(--rtc-padding-s);
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  padding-left: var(--rtc-padding-m);
+}
+
+.card button {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: var(--rtc-border-radius);
+  background-color: var(--rtc-button-background);
+  grid-column: 1/2;
+  grid-row: 3/5;
+  justify-self: start;
+}
+@media (max-width: 670px) {
+  header {
+    padding: 5px;
+  }
+  .grid-container {
+    display: grid;
+    padding: var(--rtc-padding-xs);
+    width: 100px;
+    margin: var(--rtc-margin-s);
+  }
+
+  .card img {
+    width: 100%;
+    min-width: 120px;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 3/ 5;
+    justify-self: start;
+  }
+  .description {
+    text-align: center;
+    padding-top: var(--rtc-padding-xs);
+    justify-self: center;
+    padding-left: 0%;
+  }
+  .button {
+    grid-column: 1/2;
+    grid-row: 5/ 6;
+  }
+  .menu {
+    display: block;
+    grid-column: 11;
+    padding-right: 0px;
+    cursor: pointer;
+    width: 20px;
+  }
+  .usuario {
+    grid-column: 9/10;
+    grid-row: 1/2;
+    width: 20px;
+  }
+  .cesta {
+    grid-column: 10/11;
+    grid-row: 1/2;
+    width: 20px;
+  }
+
+  .card {
+    display: grid;
+    height: 250px;
+    width: 250px;
+    position: relative;
+
+    align-items: center;
+    justify-items: center;
+    gap: var(--rtc-gap-s);
+    grid-template-rows: 20px 20px 50px 20px;
+    grid-template-columns: 250px;
+  }
+  section > h1 {
+    padding-left: var(--rtc-padding-s);
+    padding-top: var(--rtc-padding-xs);
+    font-weight: 50;
+    font-size: 100%;
+  }
+  section > h4 {
+    color: var(--rtc-color-100);
+    display: flex;
+    position: absolute;
+    padding-top: var(--rtc-padding-s);
+    padding-left: var(--rtc-padding-s);
+    margin-top: var(--rtc-margin-s);
+    font-size: 10%;
+    font-weight: 20;
+  }
+  .nav-list {
+    display: none;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 10%;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+  }
+}
